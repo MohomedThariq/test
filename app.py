@@ -4,6 +4,10 @@ import json
 
 app = Flask(__name__)
 
+@app.route('/', methods = ['GET'])
+def hi():
+    return jsonify({'hello': 'world'})
+
 @app.route('/get', methods = ['GET'])
 def hello():
     return jsonify({'hello': 'world'})
