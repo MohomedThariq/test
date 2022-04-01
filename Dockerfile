@@ -12,4 +12,4 @@ COPY Pipfile Pipfile.lock ${PROJECT_DIR}/
 
 RUN pipenv install --system --deploy
 
-CMD ["python","app.py"]
+RUN python app.py
