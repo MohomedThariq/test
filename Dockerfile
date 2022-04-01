@@ -11,5 +11,3 @@ WORKDIR ${PROJECT_DIR}
 COPY Pipfile Pipfile.lock ${PROJECT_DIR}/
 
 RUN pipenv install --system --deploy
-
-RUN python app.py
