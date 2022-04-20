@@ -54,6 +54,7 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print('upload_image filename: ' + filename)
             #flash('Image successfully uploaded and displayed below')
+            print(url_for('static', filename='uploads/' + filename))
             return redirect(url_for('static', filename='uploads/' + filename), code=301)
         else:
             #flash('Allowed image types are -> png, jpg, jpeg, gif')
@@ -65,7 +66,7 @@ def upload_file():
 if __name__ == "__main__":
     #app.secret_key = 'ur' #the secret_key can be anything
     port = os.environ.get("PORT", 5000)
-    app.run(debug = True, host = '0.0.0.0', port=port)
+    app.run(debug = False, host = '0.0.0.0', port=port)
     #app.run(debug=True)
 
     #'0.0.0.0'
